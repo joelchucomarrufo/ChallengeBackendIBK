@@ -35,7 +35,7 @@ app.post('/iniciarSesion', (req, res) => {
     // Find user in the mock database
     const user = users.find(user => user.username === username && user.password === password);
     if (!user) {
-        return res.status(401).json({ error: 'Invalid username or password' });
+        return res.json({ error: 'Invalid username or password' }); 
     }
     res.json({ message: 'Login successful' });
 });

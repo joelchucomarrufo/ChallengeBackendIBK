@@ -14,16 +14,16 @@ const users = [
 // Sample data for endpoints
 const accounts = [
     { id: 1, accountName: 'Cuenta soles', balance: 1000.80 },
-    { id: 2, accountName: 'Cuenta dólares', value: 1800.20 },
-    { id: 3, accountName: 'Cuenta soles', value: 0.00 }
+    { id: 2, accountName: 'Cuenta dólares', balance: 1800.20 },
+    { id: 3, accountName: 'Cuenta soles', balance: 0.00 }
 ];
 
 
 // Sample data for endpoints
 const detailAccount = [
-    { id: 1, dateTime: "25 Nov 2023", description: 'Transferencia', balance: +6.10 },
-    { id: 1, dateTime: "25 Nov 2023", description: 'Plin', balance: -10.00 },
-    { id: 2, dateTime: "25 Ene 2024", description: 'Transferencia', balance: +640.10 },
+    { id: 1, dateTime: "25 Nov 2023", description: 'Transferencia', amount: +6.10 },
+    { id: 1, dateTime: "25 Nov 2023", description: 'Plin', amount: -10.00 },
+    { id: 2, dateTime: "25 Ene 2024", description: 'Transferencia', amount: +640.10 },
 ];
 
 // Middleware
@@ -56,7 +56,7 @@ app.get('/actualizarCuentas', (req, res) => {
 app.get('/obtenerMovimientos/:id', (req, res) => {
     const { id } = req.params;
     const filteredData = detailAccount.filter(item => item.id === parseInt(id));
-    const simplifiedData = filteredData.map(item => ({ dateTime: item.dateTime, description: item.description, balance: item.balance }));
+    const simplifiedData = filteredData.map(item => ({ dateTime: item.dateTime, description: item.description, amount: item.amount }));
     res.json({ movements: simplifiedData });
 });
 

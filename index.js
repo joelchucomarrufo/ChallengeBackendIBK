@@ -62,6 +62,9 @@ app.get('/obtenerMovimientos/:id', (req, res) => {
     res.json(simplifiedData);
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+app.set('port', process.env.PORT || 7557);
+
+app.listen(app.get('port'), () => {
+    console.log('Server on port ', app.get('port'));
 });
+

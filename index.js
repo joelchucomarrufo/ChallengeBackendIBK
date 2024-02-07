@@ -48,8 +48,8 @@ app.get('/obtenerCuentas', (req, res) => {
 
 // Update Accounts
 app.get('/actualizarCuentas', (req, res) => {
-    const lastItem = accounts.slice(accounts.length - 1, 1); // Obtenemos el último registro
-    res.json({ accounts: lastItem });
+    const lastItem = accounts[accounts.length - 1]; // Obtenemos el último registro
+    res.json({ accounts: [lastItem] });
 });
 
 // Endpoint 3

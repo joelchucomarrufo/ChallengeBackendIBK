@@ -43,23 +43,21 @@ app.post('/iniciarSesion', (req, res) => {
 // Get Accounts
 app.get('/obtenerCuentas', (req, res) => {
     const firstTwoItems = accounts.slice(0, 2); // Obtenemos solo los dos primeros registros
-    res.json(firstTwoItems);
+    res.json({ accounts: firstTwoItems });
 });
 
 // Update Accounts
 app.get('/actualizarCuentas', (req, res) => {
     const lastItem = accounts[accounts.length - 1]; // Obtenemos el último registro
-    res.json(lastItem);
+    res.json({ accounts: lastItem });
 });
 
 // Endpoint 3
 app.get('/obtenerMovimientos/:id', (req, res) => {
     const { id } = req.params;
-    // Filtrar los objetos de data1 que coincidan con el ID proporcionado
     const filteredData = detailAccount.filter(item => item.id === parseInt(id));
-    // Mapear los objetos filtrados para devolver solo dos propiedades
     const simplifiedData = filteredData.map(item => ({ dateTime: item.dateTime, description: item.description, balance: item.balance }));
-    res.json(simplifiedData);
+    res.json({ movements: simplifiedData });
 });
 
 app.set('port', process.env.PORT || 7557);

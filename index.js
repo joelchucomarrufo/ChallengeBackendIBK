@@ -13,9 +13,9 @@ const users = [
 
 // Sample data for endpoints
 const accounts = [
-    { id: 1, accountName: 'Cuenta soles', balance: 1000.80, symbol: "S/" },
-    { id: 2, accountName: 'Cuenta dólares', balance: 1800.20, symbol: "US$"  },
-    { id: 3, accountName: 'Cuenta soles', balance: 0.00, symbol: "S/"  }
+    { id: 1, accountName: 'Cuenta soles', accountNumber: '00-000244-004121', balance: 1000.80, symbol: "S/" },
+    { id: 2, accountName: 'Cuenta dólares', accountNumber: '00-478512-1232143', balance: 1800.20, symbol: "US$"  },
+    { id: 3, accountName: 'Cuenta soles', accountNumber: '00-43565-24435343', balance: 0.00, symbol: "S/"  }
 ];
 
 

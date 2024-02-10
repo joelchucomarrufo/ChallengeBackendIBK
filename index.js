@@ -21,9 +21,9 @@ const accounts = [
 
 // Sample data for endpoints
 const detailAccount = [
-    { id: 1, dateTime: "25 Nov 2023", description: 'Transferencia', amount: +6.10 },
-    { id: 1, dateTime: "25 Nov 2023", description: 'Plin', amount: -10.00 },
-    { id: 2, dateTime: "25 Ene 2024", description: 'Transferencia', amount: +640.10 },
+    { id: 1, dateTime: "25 Nov 2023", description: 'Transferencia', symbol: "S/", amount: 6.10 },
+    { id: 1, dateTime: "25 Nov 2023", description: 'Plin', symbol: "S/", amount: -10.00 },
+    { id: 2, dateTime: "25 Ene 2024", description: 'Transferencia', symbol: "US$", amount: 640.10 },
 ];
 
 // Middleware

@@ -56,7 +56,7 @@ app.get('/actualizarCuentas', (req, res) => {
 app.get('/obtenerMovimientos/:id', (req, res) => {
     const { id } = req.params;
     const filteredData = detailAccount.filter(item => item.id === parseInt(id));
-    const simplifiedData = filteredData.map(item => ({ dateTime: item.dateTime, description: item.description, amount: item.amount }));
+    const simplifiedData = filteredData.map(item => ({ dateTime: item.dateTime, description: item.description, symbol: item.symbol, amount: item.amount }));
     res.json({ movements: simplifiedData });
 });
 
